@@ -217,5 +217,91 @@ const userss = [
 ];
 const tUser1 = userss.map(i => i.id + " : " + i.name);
 const tUser2 = userss.map(i => i.id * 2);
-console.log(tUser1);
-console.log(tUser2);
+console.log(tUser1);//['1 : Janoi', '2 : BJR', '3 : Api', '4 : chat']
+console.log(tUser2);//[2, 4, 6, 8]
+
+//Spread Syntax of ...Array
+//Ex..Spread operator -การกระจายสมาชิกของ array ออกมาใช้งาน ใช้แทน Concat ได้
+const arr3 = [2, 3, 4];
+const arr4 = [6, 7, 8];
+const marged = [1, ...arr3, 5, ...arr4];
+console.log(marged);//[1, 2, 3, 4, 5, 6, 7, 8]
+
+//Spread Syntax of ...Object
+//Ex..Spread Syntax ในกรณีของ object เป็นการกระจายของ Properties of Object เช่น การรวมของ Object
+const user3 = {
+    name: "Apichat",
+    age: "28"
+};
+const details = {
+    skill: "React",
+    lenguage: "JavaScript"
+};
+const instructor = { ...user3, ...details };
+console.log(instructor);//{name: 'Apichat', age: '28', skill: 'React', lenguage: 'JavaScript'}
+
+//Destructuring -การกำหนดค่าแบบ Destructuring จะช่วยให้สามารถเอา สมาชิกที่อย่ใน Array หรือ Object บางตัว-
+//ออมาอยู่ในตัวแปรได้ ซึ่งสิ่งนี้จะทำให้เราสะดวกมากๆ
+//Ex..Destructuring of Array
+const userrr = ["Apichat", "Wongtala"];
+const [firstName, larstName] = userrr;
+console.log(userrr);//['Apichat', 'Wongtala']
+///////////////
+const [u1, u2, u3] = ["Janoi", "BJR", 28];
+console.log(u1, u2);//Janoi BJR
+console.log(u1, u2, u3);//Janoi BJR 28
+
+//Ex..Destructuring of Object
+let options = {
+    title: "Menu",
+    width: 100,
+    height: 200
+};
+let { title, width, height } = options;
+console.log(title)//Menu
+console.log(width)//100
+console.log(title, width, height)//Menu 100 200
+console.log(options.title, options.height)//Menu 200
+//////
+let { title: ti, width: wi, height: he } = options;
+console.log(ti)//Menu
+console.log(wi)//100
+console.log(ti, wi, he)//Menu 100 200
+//////////////////////
+/////////////////////
+const fruitsss = ["Apple", "Orange", "Plum"];
+const resultss = fruitsss.map(fruit => {
+    if (fruit === "Apple") {
+        return fruit;
+    } else {
+        return fruit + "s";
+    }
+});
+console.log(resultss);
+const { name: n, surname } = {
+    name: 'Janoi',
+    surname: 'chbsbcnhj'
+}
+console.log(n)
+let sds = {
+    name: "ajdshasj",
+    zix: {
+        hei: 100,
+        wid: 50
+    }
+}
+const hei = sds.zix["hei"]
+console.log(hei)
+////////////////////
+const gfdd = ["ass", "sda", "hgyf"]
+for (let gfd of gfdd) {
+    console.log(gfd)
+}
+///////////////////
+const actors = [
+    { name: "tg", sur: "ha" },
+    { name: "vi", sur: "di" },
+    { name: "wi", sur: "sm" }
+];
+const resu = actors.filter(actor => actor.sur === "di");
+console.log(resu);
