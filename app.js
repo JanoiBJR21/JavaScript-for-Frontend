@@ -171,6 +171,7 @@ for (let i = 0; i < fruitss.length; i++) {////เมื่อต้องกา�
 // for (let fruit of fruitss) {//เมื่อไม่ต้องการใช้ index
 //     console.log(fruit);
 // }
+
 ///////////////////////
 ////////Method/////////
 ///////////////////////
@@ -179,3 +180,42 @@ for (let i = 0; i < fruitss.length; i++) {////เมื่อต้องกา�
 //arr.pop()-นำค่าข้างหลังออก            //-ใช้บ่อย
 //arr.shift()-นำค่าข้างหน้าออก
 //arr.unshift(...item)-เพิ่ม item ไปข้างหน้า
+
+//Ex..concat -ใช้เมื่อเราต้องการรวม array หลายอันเข้าด้วยกัน
+const arr = [1, 2];
+const arr1 = [7, 8];
+const addArr = arr.concat([3, 4]);
+console.log(addArr);//[1, 2, 3, 4]
+console.log(arr.concat([3, 4], [5, 6], arr1));//[1, 2, 3, 4, 5, 6, 7, 8]
+
+//Ex..find -การหาสมาชิกใน array
+const arr2 = [
+    { name: "Janoi", age: 30 },
+    { name: "BJR", age: 20 },
+    { name: "Apichat", age: 15 }
+];
+const target = arr2.find(i => i.age === 20);
+console.log(target);//{name: 'BJR', age: 20}
+
+//Ex..filter -การคัดกรองสมาชิกใน array
+const users = [
+    { name: "Janoi", age: 30 },
+    { name: "BJR", age: 20 },
+    { name: "Api", age: 15 },
+    { name: "chat", age: 15 }
+];
+const tUuser = users.filter(i => i.age === 15);
+console.log(users);
+console.log(tUuser);//[{name: "Api", age: 15}, {name: "chat", age: 15}]
+
+//Ex..map การแปลงสมาชิกใน array
+const userss = [
+    { id: 1, name: "Janoi", age: 30 },
+    { id: 2, name: "BJR", age: 20 },
+    { id: 3, name: "Api", age: 15 },
+    { id: 4, name: "chat", age: 15 }
+];
+const tUser1 = userss.map(i => i.id + " : " + i.name);
+const tUser2 = userss.map(i => i.id * 2);
+console.log(tUser1);
+console.log(tUser2);
